@@ -1,5 +1,9 @@
 Revision history for Perl extension Javascript::MD5.
 
+1.01  Tue Mar  16 14:36:00 2004
+	- Correct the docs, which somehow got chopped off in V 1.00
+	- There are no code changes, so there is no need to upgrade
+
 1.00  Fri Mar  05 10:23:29 2004
 	- Original version
 	- The original Javascript code from Yahoo is shipped as yahoo.js.

@@ -1,9 +1,9 @@
 Build.PL
 Changes.txt
-examples/md5.cgi
-lib/Javascript/MD5.pm
-MANIFEST			This list of files
+MANIFEST
 META.yml
 README
+examples/md5.cgi
+lib/Javascript/MD5.pm
 t/test.t
 yahoo.js

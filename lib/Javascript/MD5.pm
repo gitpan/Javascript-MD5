@@ -54,7 +54,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = qw(
 
 );
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 
 # -----------------------------------------------
 
@@ -382,11 +382,11 @@ help on unpacking and installing each type of distro.
 
 =head1 Constructor and initialization
 
-new(...) returns a C<CGI::Session::Manager> object.
+new(...) returns a C<Javascript::MD5> object.
 
 This is the class's contructor.
 
-Usage: CGI::Session::Manager -> new().
+Usage: Javascript::MD5 -> new().
 
 C<new()> does not take any parameters.
 
@@ -395,3 +395,34 @@ C<new()> does not take any parameters.
 Returns a block of Javascript which you must output as part of your HTML page.
 
 See the Synopsis for one way to do this.
+
+=head1 Example code
+
+See the examples/ directory in the distro.
+
+There is 1 demo file, md5.cgi.
+
+This is a CGI script identical to the one in the synopsis.
+
+Edit it to suit your circumstances.
+
+=head1 Required Modules
+
+None.
+
+=head1 Author
+
+C<Javascript::MD5> was written by Ron Savage I<E<lt>ron@savage.net.auE<gt>> in 2004.
+
+Home page: http://savage.net.au/index.html
+
+=head1 Copyright
+
+Australian copyright (c) 2004, Ron Savage. All rights reserved.
+
+	All Programs of mine are 'OSI Certified Open Source Software';
+	you can redistribute them and/or modify them under the terms of
+	The Artistic License, a copy of which is available at:
+	http://www.opensource.org/licenses/index.html
+
+=cut
