@@ -54,7 +54,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = qw(
 
 );
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 # -----------------------------------------------
 
@@ -341,20 +341,20 @@ This is a complete, runnable, tested program.
 	# ------------------
 
 	my($q)	= CGI -> new();
-	my($p)	= $q -> param('password') || '';
+	my($p)	= $q -> param('my_password') || '';
 	my($js)	= Javascript::MD5 -> new();
 
 	print $q -> header(),
-      $q -> start_html({script => $js -> javascript(), title => 'Javascript::MD5'}),
+      $q -> start_html({script => $js -> javascript('my_password'), title => 'Javascript::MD5'}),
       $q -> h1({align => 'center'}, 'Javascript::MD5'),
       "Previous value: $p",
       $q -> br(),
       $q -> start_form({action => $q -> url(), name => 'md5'}),
       'Username: ',
-      $q -> textfield({name => 'username', size => 50}),
+      $q -> textfield({name => 'my_username', size => 50}),
       $q -> br(),
       'Password: ',
-      $q -> password_field({name => 'password', size => 50}),
+      $q -> password_field({name => 'my_password', size => 50}),
       $q -> br(),
       $q -> submit({onClick => 'return RetMD5()'}),
       $q -> end_form(),
@@ -390,11 +390,26 @@ Usage: Javascript::MD5 -> new().
 
 C<new()> does not take any parameters.
 
-=head1 Method: javascript()
+=head1 Method: javascript([$name_of_CGI_password_field])
 
 Returns a block of Javascript which you must output as part of your HTML page.
 
+Takes an optional parameter, the name of the CGI field used to input the password.
+
+This field name defaults to 'password'.
+
 See the Synopsis for one way to do this.
+
+=head1 Submitting a CGI Form
+
+To disable this module, simply use a submit button of the form:
+
+	$q -> submit();
+
+To enable the module, use a submit button with an onClick event handler that calls the
+Javascript function which converts your CGI password field's value into the MD5 digest of that value:
+
+	$q -> submit({onClick => 'return RetMD5()'});
 
 =head1 Example code
 

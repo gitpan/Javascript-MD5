@@ -1,5 +1,10 @@
 Revision history for Perl extension Javascript::MD5.
 
+1.02  Tue Apr  13 13:13:13 2004
+	- There are no code changes in this version
+	- Document the optional parameter to the 'javascript' method
+	- Add a section to the docs about CGI form submission, including calling the onClick event handler
+
 1.01  Tue Mar  16 14:36:00 2004
 	- Correct the docs, which somehow got chopped off in V 1.00
 	- There are no code changes, so there is no need to upgrade
