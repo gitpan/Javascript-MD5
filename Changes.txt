@@ -1,5 +1,9 @@
 Revision history for Perl extension Javascript::MD5.
 
+1.04  Tue Jul 20 20:43:00 2004
+	- Change Makefile.PL to coexist with Module::Build
+	- Add t/pod.t to test all PODs
+
 1.03  Tue Apr  27 14:59:04 2004
 	- Replace Yahoo!'s version of the Javascript with Paul Johnston's version,
 		from his web site: http://pajhome.org.uk/crypt/md5
