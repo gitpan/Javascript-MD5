@@ -1,0 +1,10 @@
+Revision history for Perl extension Javascript::MD5.
+
+1.00  Fri Mar  05 10:23:29 2004
+	- Original version
+	- The original Javascript code from Yahoo is shipped as yahoo.js.
+		See http://4.11.205.206/yahoo.zip.
+		Many thanks to Mark S Pryor for telling me about yahoo.js
+	- I have deleted from that code some functions which were not called, changed all
+		" to ', and made the CGI form field name, by default 'password', a parameter
+	- The program in the synopsis is in the examples/ directory

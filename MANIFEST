@@ -1,0 +1,9 @@
+Build.PL
+Changes.txt
+examples/md5.cgi
+lib/Javascript/MD5.pm
+MANIFEST			This list of files
+META.yml
+README
+t/test.t
+yahoo.js
