@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name: Javascript-MD5
-version: 1.02
+version: 1.03
 author:
   - Ron Savage <ron@savage.net.au>
 abstract: Calculate the MD5 digest of a CGI form field
