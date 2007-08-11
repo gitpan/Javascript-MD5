@@ -1,15 +1,20 @@
---- #YAML:1.0
+---
 name: Javascript-MD5
-version: 1.05
+version: 1.06
 author:
-  - Ron Savage <ron@savage.net.au>
+  - 'Ron Savage <ron@savage.net.au>'
 abstract: Calculate the MD5 digest of a CGI form field
 license: artistic
+resources:
+  license: http://opensource.org/licenses/artistic-license.php
 build_requires:
   Test::More: 0
   Test::Pod: 0
 provides:
   Javascript::MD5:
     file: lib/Javascript/MD5.pm
-    version: 1.05
-generated_by: Module::Build version 0.2611
+    version: 1.06
+generated_by: Module::Build version 0.2805
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2

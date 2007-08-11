@@ -54,7 +54,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = qw(
 
 );
-our $VERSION = '1.05';
+our $VERSION = '1.06';
 
 # -----------------------------------------------
 
@@ -87,9 +87,10 @@ our $VERSION = '1.05';
 
 sub javascript
 {
-	my($self, $field_name) = @_;
-	$field_name ||= 'password';
-
+	my($self, $field_name, $form_number) = @_;
+	$field_name		||= 'password';
+	$form_number	||= 0;
+	
 	return <<EOS;
 /*
  * A JavaScript implementation of the RSA Data Security, Inc. MD5 Message
@@ -106,19 +107,19 @@ sub javascript
 
 function str2hex_md5()
 {
-	document.forms[0].$field_name.value = hex_md5(document.forms[0].$field_name.value);
+	document.forms[$form_number].$field_name.value = hex_md5(document.forms[$form_number].$field_name.value);
 	return true;
 }
 
 function str2b64_md5()
 {
-	document.forms[0].$field_name.value = b64_md5(document.forms[0].$field_name.value);
+	document.forms[$form_number].$field_name.value = b64_md5(document.forms[$form_number].$field_name.value);
 	return true;
 }
 
 function str2str_md5()
 {
-	document.forms[0].$field_name.value = str_md5(document.forms[0].$field_name.value);
+	document.forms[$form_number].$field_name.value = str_md5(document.forms[$form_number].$field_name.value);
 	return true;
 }
 
@@ -131,7 +132,7 @@ var b64pad  = ""; /* base-64 pad character. "=" for strict RFC compliance   */
 var chrsz   = 8;  /* bits per input character. 8 - ASCII; 16 - Unicode      */
 
 /*
- * These are the functions you'll usually want to call
+ * These are the functions you'll usually want to call.
  * They take string arguments and return either hex or base-64 encoded strings
  */
 function hex_md5(s){ return binl2hex(core_md5(str2binl(s), s.length * chrsz));}
@@ -473,15 +474,27 @@ Usage: Javascript::MD5 -> new().
 
 C<new()> does not take any parameters.
 
-=head1 Method: javascript([$name_of_CGI_password_field])
+=head1 Method: javascript([$name_of_CGI_password_field][, $number_of_CGI_form])
 
 Returns a block of Javascript which you must output as part of your HTML page.
 
-Takes an optional parameter, the name of the CGI field used to input the password.
+Takes 2 optional parameters:
+
+=over 4
+
+=item The name of the CGI field used to input the password
 
 This field name defaults to 'password'.
 
+=item The number of the CGI form within the HTML page
+
+This field value defaults to 0, which is the first form on the page.
+
+=back
+
 See the Synopsis for one way to do this.
+
+Note: if you pass just 1 parameter, it is assumed to be the name of a field.
 
 =head1 Submitting a CGI Form
 

@@ -1,3 +1,4 @@
+Build.bat
 Build.PL
 Changes.txt
 examples/md5.cgi
@@ -5,7 +6,7 @@ lib/Javascript/MD5.pm
 Makefile.PL
 MANIFEST			This list of files
 MANIFEST.SKIP
+META.yml
 README
 t/pod.t
 t/test.t
-META.yml
