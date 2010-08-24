@@ -54,7 +54,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = qw(
 
 );
-our $VERSION = '1.07';
+our $VERSION = '1.10';
 
 # -----------------------------------------------
 
@@ -90,7 +90,7 @@ sub javascript
 	my($self, $field_name, $form_number) = @_;
 	$field_name		||= 'password';
 	$form_number	||= 0;
-	
+
 	return <<EOS;
 /*
  * A JavaScript implementation of the RSA Data Security, Inc. MD5 Message
@@ -536,10 +536,6 @@ Edit it to suit your circumstances.
 
 Javascript::SHA1.
 
-=head1 Required Modules
-
-None.
-
 =head1 Author
 
 C<Javascript::MD5> was written by Ron Savage I<E<lt>ron@savage.net.auE<gt>> in 2004.
@@ -548,8 +544,7 @@ Home page: http://savage.net.au/index.html
 
 =head1 Copyright
 
-Australian copyright (c) 2004, Ron Savage. All rights reserved.
-
+Australian copyright (c) 2004, Ron Savage.
 	All Programs of mine are 'OSI Certified Open Source Software';
 	you can redistribute them and/or modify them under the terms of
 	The Artistic License, a copy of which is available at:

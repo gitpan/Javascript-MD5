@@ -1,6 +1,6 @@
 Build.PL
 Changelog.ini
-Changes.txt
+CHANGES
 examples/md5.cgi
 lib/Javascript/MD5.pm
 Makefile.PL
